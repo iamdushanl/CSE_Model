@@ -1,0 +1,38 @@
+id,owner,week,title,label
+T1,Teddy,0,"Push repo, protect main, invite members, create issues",lead
+T2,Teddy,1,Finalise evaluation engine and results schema,eval
+T3,Teddy,1,Agree feature list with Member 3,eval
+T4,Teddy,2,"Logistic, Random Forest, XGBoost for T1 T2 T3",ml
+T5,Teddy,3,LSTM (stretch),ml
+T6,Teddy,3,Interpretability: permutation importance and SHAP (A3),ml
+T7,Teddy,3,Stability and leakage audit,ml
+T8,Teddy,4,Integration: python run.py all reproduces everything; tag v1.0,eval
+T9,Teddy,4,Report: evaluation design and ML sections; lead presentation,report
+C1,Chamathka,1,Baselines through the Forecaster interface,ts
+C2,Chamathka,1,Box-Jenkins identification on the market proxy,ts
+C3,Chamathka,2,"AR(p) and ARMA(p,q) walk-forward, h=1 and h=5",ts
+C4,Chamathka,2,"AR(1)-GJR-GARCH(1,1)-t with Student-t errors",ts
+C5,Chamathka,3,"Diagnostics: Ljung-Box, ARCH-LM, QQ, parameter drift",ts
+C6,Chamathka,3,Stock-level ARX extension and per-stock table,ts
+C7,Chamathka,4,Optional A5: volatility target (HAR and GARCH vs ML),ts
+C8,Chamathka,4,Report: baselines and traditional models sections,report
+D1,Member 3,1,Own and test the cleaning code,data
+D2,Member 3,1,Data audit tables and figures,data
+D3,Member 3,2,Hand-check flagged returns; threshold sensitivity 0.25/0.35/0.50,data
+D4,Member 3,1,Processed datasets: panel and market proxy,data
+D5,Member 3,2,Leakage-safe feature builder with Teddy,data
+D6,Member 3,3,"Reproducibility: requirements, data dictionary, fresh-clone test",data
+D7,Member 3,4,Report: data section,report
+E1,Member 4,1,"EDA v2 on cleaned data with ADF, KPSS, ACF, Ljung-Box, ARCH-LM",eda
+E2,Member 4,2,Pre-register regimes in docs/regimes.md,eda
+E3,Member 4,2,Statistical test summary table,eda
+E4,Member 4,1,Shared figure style,eda
+E5,Member 4,3,A2 regime and shock analysis,eda
+E6,Member 4,4,Report: EDA and regime sections,report
+F1,Member 5,1,Problem statement and literature review,report
+F2,Member 5,3,A4 liquidity analysis,analysis
+F3,Member 5,3,A1 horizon analysis,analysis
+F4,Member 5,3,Business interpretation: strategy check with costs,analysis
+F5,Member 5,2,Limitations and improvements list,report
+F6,Member 5,3,Report assembly and consistency read,report
+F7,Member 5,4,Slides or presentation material,report
