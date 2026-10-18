@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+# Rebuilt by code, never committed
+data/processed/*
+!data/processed/.gitkeep
+results/predictions/*
+!results/predictions/.gitkeep
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Word/Office temp files
+~$*
