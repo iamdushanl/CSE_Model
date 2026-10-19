@@ -18,8 +18,8 @@ The full explanation, glossary, roles and plan are in the team handbook (`docs/H
 
 ## Quick start
 ```bash
-git clone https://github.com/iamdushanl/cse-ts-forecasting.git
-cd cse-ts-forecasting
+git clone https://github.com/iamdushanl/CSE_Model.git
+cd CSE_Model
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python run.py test      # 16 tests must pass
