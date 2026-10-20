@@ -39,7 +39,7 @@ Outputs: `reports/tables/metrics_<window>.csv`, `results/predictions/*.parquet`,
 | `src/viz/` | shared figure style | Member 4 |
 | `notebooks/` | exploration and figures (one owner each) | see checklist in each notebook |
 | `docs/` | decisions, features, regimes, literature, limitations, contribution logs | everyone |
-| `reports/`, `report/` | generated tables and figures; report text | Member 5 assembles |
+| `reports/`, `report/` | generated tables and figures; report text | Imasha assembles |
 
 ## Evaluation design
 Train 2002 to 2017, validation 2018 to 2019 (tune here only), test1 2020 to March 2021 (COVID shock),

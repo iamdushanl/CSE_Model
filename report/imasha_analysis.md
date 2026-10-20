@@ -1,4 +1,4 @@
-# Member 5: Forecast Horizon, Liquidity and Strategy Cost Analysis
+# Imasha: Forecast Horizon, Liquidity and Strategy Cost Analysis
 
 ## 1. Objective
 

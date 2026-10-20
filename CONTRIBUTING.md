@@ -7,8 +7,8 @@
 - Open a draft pull request early. One approval from your review pair, tests green, then **squash and merge**.
 
 ## Review pairs
-Teddy and Chamathka review each other's modelling code. Member 3 and Member 4 review each other. Member 5 reviews figures
-and tables; Teddy reviews Member 5's code.
+Teddy and Chamathka review each other's modelling code. Member 3 and Member 4 review each other. Imasha reviews figures
+and tables; Teddy reviews Imasha's code.
 
 ## The three contracts (change only through a pull request Teddy approves)
 1. Feature table: columns and rules in `docs/features.md` and `src/features/build.py`.
