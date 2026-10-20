@@ -1,15 +1,37 @@
-# Literature (Member 5)
-Aim for 8 to 12 sources. For each: reference, one-line reason it matters to us. Verify every citation
-(authors, year, journal) from the original before it goes into the report.
+# Literature Review — Member 5
 
-Starting points to look up and check:
-- Fama (1970), efficient capital markets (efficient-market hypothesis)
-- Lo and MacKinlay (1990), nonsynchronous trading and autocorrelation in returns (our thin-trading explanation)
-- Bollerslev (1986), GARCH; Glosten, Jagannathan and Runkle (1993), GJR asymmetric volatility
-- Diebold and Mariano (1995), comparing predictive accuracy
-- Breiman (2001), random forests; Chen and Guestrin (2016), XGBoost; Hochreiter and Schmidhuber (1997), LSTM
-- Gu, Kelly and Xiu (2020), empirical asset pricing via machine learning
-- Something on frontier or emerging market predictability (search for CSE or South Asian market studies)
+## Aim
 
-| Source | Why it matters | Used in report section |
+This literature review supports the analysis of stock-return predictability, forecast horizons, liquidity-related behaviour, model evaluation, and illustrative strategy costs in the Colombo Stock Exchange (CSE) project.
+
+## Reviewed sources
+
+| Source | Why it matters to this project | Used in report section |
 | --- | --- | --- |
+| Fama, E.F. (1970). Efficient Capital Markets: A Review of Theory and Empirical Work. *The Journal of Finance*, 25(2), 383–417. [https://doi.org/10.1111/j.1540-6261.1970.tb00518.x](https://doi.org/10.1111/j.1540-6261.1970.tb00518.x) | Establishes the efficient-market hypothesis and provides a theoretical basis for investigating whether historical information helps predict returns. | Background and motivation |
+| Lo, A.W. and MacKinlay, A.C. (1990). An Econometric Analysis of Nonsynchronous Trading. *Journal of Econometrics*, 45(1–2), 181–211. [https://doi.org/10.1016/0304-4076(90)90098-E](https://doi.org/10.1016/0304-4076(90)90098-E) | Explains how infrequent or nonsynchronous trading can affect measured returns and their autocorrelation. This is relevant when interpreting zero-return days and possible thin-trading effects. | Liquidity analysis and limitations |
+| Bollerslev, T. (1986). Generalized Autoregressive Conditional Heteroskedasticity. *Journal of Econometrics*, 31(3), 307–327. [https://doi.org/10.1016/0304-4076(86)90063-1](https://doi.org/10.1016/0304-4076(86)90063-1) | Introduces the GARCH framework for modelling time-varying conditional variance, providing background for volatility-related stock-market research. | Literature background and possible extensions |
+| Glosten, L.R., Jagannathan, R. and Runkle, D.E. (1993). On the Relation between the Expected Value and the Volatility of the Nominal Excess Return on Stocks. *The Journal of Finance*, 48(5), 1779–1801. [https://doi.org/10.1111/j.1540-6261.1993.tb05128.x](https://doi.org/10.1111/j.1540-6261.1993.tb05128.x) | Examines asymmetric responses of volatility to positive and negative return shocks, motivating future analysis of downside risk and volatility. | Limitations and future improvements |
+| Diebold, F.X. and Mariano, R.S. (1995). Comparing Predictive Accuracy. *Journal of Business & Economic Statistics*, 13(3), 253–263. [https://doi.org/10.1080/07350015.1995.10524599](https://doi.org/10.1080/07350015.1995.10524599) | Presents a statistical framework for comparing forecast accuracy. It highlights the difference between observing different error values and formally testing whether forecast performance differs significantly. | Model evaluation and future improvements |
+| Breiman, L. (2001). Random Forests. *Machine Learning*, 45, 5–32. [https://doi.org/10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324) | Establishes Random Forests as an ensemble-learning approach that can model nonlinear relationships and estimate feature importance. | Machine-learning background |
+| Chen, T. and Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. In *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, 785–794. [https://doi.org/10.1145/2939672.2939785](https://doi.org/10.1145/2939672.2939785) | Describes the gradient-boosted tree method used in this project and explains its scalable learning approach. | Methods and model selection |
+| Hochreiter, S. and Schmidhuber, J. (1997). Long Short-Term Memory. *Neural Computation*, 9(8), 1735–1780. [https://doi.org/10.1162/neco.1997.9.8.1735](https://doi.org/10.1162/neco.1997.9.8.1735) | Introduces LSTM networks for learning longer-term dependencies in sequential data, providing a possible alternative for future time-series experiments. | Future improvements |
+| Gu, S., Kelly, B. and Xiu, D. (2020). Empirical Asset Pricing via Machine Learning. *The Review of Financial Studies*, 33(5), 2223–2273. [https://doi.org/10.1093/rfs/hhaa009](https://doi.org/10.1093/rfs/hhaa009) | Shows how machine-learning models can capture nonlinear interactions in asset-pricing data and identifies liquidity, momentum, and volatility among important predictive signals. | Model motivation and feature discussion |
+| Vidanage, T.N. and Dayaratne-Banda, O.G. (2013). Factors Determining the Predictability of Stock Prices in Emerging Capital Markets: Evidence from Colombo Stock Exchange. University of Peradeniya research repository. [Repository record](https://ir.lib.pdn.ac.lk/items/86decf65-8396-467f-9122-fd9bce92e165) | Provides context specific to the CSE by examining stock-price predictability and macroeconomic and sociopolitical factors using historical monthly data. | CSE context and research motivation |
+| Srikantha, A. (2023). Forecasting Share Prices Listed in Colombo Stock Exchange Using Machine Learning. Sri Lanka Institute of Information Technology research repository. [Repository record](http://dlib.iit.ac.lk/xmlui/handle/123456789/2177) | Offers a locally relevant machine-learning study of share-price forecasting for ten large-capitalisation CSE companies. Its methods and scope can be compared with this project's return and horizon analysis. | Related local research |
+
+## Synthesis
+
+The literature provides three main foundations for this project. First, the efficient-market hypothesis motivates testing whether historical market information has predictive value rather than assuming that returns are predictable. Second, nonsynchronous trading and volatility research warn that return patterns can reflect trading frequency and changing market risk, not necessarily a reliable trading opportunity. Third, machine-learning research supports testing nonlinear models such as XGBoost while evaluating them against suitable baselines and using careful out-of-sample procedures.
+
+Research relating directly to the CSE provides local context, but results from other markets cannot automatically be generalised to Sri Lanka. This project contributes an empirical comparison of forecast horizons and stocks, together with a liquidity-proxy analysis and illustrative transaction-cost sensitivity. These analyses should be interpreted cautiously because zero-return frequency is not a direct measure of trading volume, bid–ask spread, or market depth, and simulated strategy returns do not establish achievable live profits.
+
+## Research gap and implications
+
+The reviewed literature motivates further investigation of whether predictability differs by forecast horizon and stock liquidity in the CSE. The project's current results should be treated as evidence for this particular dataset, model, and evaluation period rather than proof of general market inefficiency or a profitable trading strategy.
+
+Future work should test longer and more consistent historical samples, account for corporate actions and changing market constituents, measure liquidity directly where data permit, compare forecasts statistically, and validate return timing, missing predictions, turnover, and realistic transaction costs.
+
+## Citation verification note
+
+Publication details and DOI links for the journal and conference papers were checked against publisher or bibliographic records. The two CSE-specific items are linked to institutional repository records; verify their complete document metadata and publication type from the original documents before using them in a final academic reference list. Confirm that every source cited here is also cited in the final report, and remove any source that is not actually used.
