@@ -30,7 +30,7 @@ def task_models(only: list[str] | None = None) -> None:
     for name in names:
         factory = MODELS[name]
         for window in WINDOWS:
-            for es in ENTITY_SETS:
+            for es in (("MARKET",) if name in {"ar", "arma", "ar_gjr_garch_t"} else ("PANEL",) if name == "stock_arx" else ENTITY_SETS):
                 for h in HORIZONS:
                     pred = walk_forward(factory, table, window, h, es)
                     if len(pred):

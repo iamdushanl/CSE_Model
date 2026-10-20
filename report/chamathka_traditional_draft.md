@@ -1,0 +1,9 @@
+# Traditional models and baselines — draft (results pending)
+
+The project compares zero-return, historical-mean, and persistence baselines against AR and ARMA models for one-day and five-day forward cumulative log returns (in percent). The zero-return baseline predicts zero and does not supply a direction probability. The historical-mean baseline estimates the average training target and training positive-direction frequency. The persistence baseline uses the current daily return for h=1 and five times the current five-day rolling mean for h=5.
+
+AR and ARMA models are fitted to daily percent log returns using the `statsmodels` ARIMA implementation with integration order d=0. Candidate orders are restricted to p,q <= 5; the `select_orders` utility ranks fitted candidates by BIC and AIC on the supplied training series. Fixed initial implementations use AR(1) and ARMA(1,1); these orders have **not** been selected from validation evidence yet. At each prediction date, the observed return is incorporated without re-estimating coefficients and a genuine h-step path is summed. Direction probabilities use a Gaussian approximation to the cumulative forecast-error distribution.
+
+A stock-specific ARX model additionally uses the stock's current return and the same-date market-proxy return. Its parameters are fitted separately for each stock from available training rows. The project's chronological walk-forward evaluator governs training and scoring.
+
+**Results pending:** no AR/ARMA/ARX walk-forward predictions or performance metrics have been generated in this environment. GJR-GARCH, residual diagnostics, yearly parameter drift, and the five-day realized-variance comparison (HAR/GARCH vs RF/XGBoost with QLIKE) remain to be implemented and run. Do not insert performance claims until `reports/tables/` contains verified outputs.
