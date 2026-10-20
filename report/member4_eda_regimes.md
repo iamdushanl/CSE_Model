@@ -51,20 +51,22 @@ Table: out-of-sample R² against the zero forecast, market proxy, 1-day horizon,
 |---|---|---:|---:|---:|
 | Test 1 | Random forest | 0.160* | 0.157 | 0.086 |
 | Test 1 | XGBoost | 0.121* | 0.175 | 0.082 |
-| Test 1 | AR(5) | 0.084* | 0.142 | 0.041 |
+| Test 1 | AR | 0.121* | 0.146 | 0.020 |
+| Test 1 | ARMA | 0.149* | 0.177 | 0.051 |
 | Test 1 | Persistence | 0.315* | 0.068 | -0.623 |
 | Test 2 | Random forest | 0.277 | 0.113 | 0.055 |
 | Test 2 | XGBoost | 0.222 | 0.110 | 0.037 |
-| Test 2 | AR(5) | 0.124 | 0.071 | 0.014 |
+| Test 2 | AR | 0.168 | -0.127 | -0.051 |
+| Test 2 | ARMA | 0.198 | -0.101 | -0.050 |
 | Test 2 | Persistence | 0.051 | -0.508 | -0.809 |
 
 \* fewer than 30 forecast days; treat as indicative only.
 
 Main findings:
 
-- **Predictability falls as volatility rises.** In the 2024 to 2025 window the machine-learning models have their largest gain on calm days and their smallest on turbulent days (random forest 0.277, 0.113, 0.055). The AR model shows the same ordering with smaller gains. Large shocks appear to carry little forecastable information.
+- **Predictability falls as volatility rises.** In the 2024 to 2025 window the machine-learning models have their largest gain on calm days and their smallest on turbulent days (random forest 0.277, 0.113, 0.055). The updated AR and ARMA models achieve positive out-of-sample R² in calm conditions, but negative R² in normal and turbulent conditions in Test 2. This indicates that the traditional models are less reliable across changing volatility regimes than Random Forest and XGBoost in this evaluation window. Large shocks appear to carry little forecastable information.
 - **Naive persistence is unreliable.** Its R² is strongly negative in normal and turbulent regimes (down to -0.81), so a model that merely repeats yesterday's return should not be used as a benchmark that is easy to beat or a strategy that is safe to follow.
-- **The COVID shock reduced but did not remove the edge.** In test 1, 60% of days are turbulent and the models stay above the zero forecast in every regime. Inside the crisis months (Mar to Dec 2020) the random forest and XGBoost 1-day R² were 0.083 and 0.069, against 0.129 and 0.144 in the rest of the window. The AR model was about the same in both (0.060 and 0.058). At the 5-day horizon the random forest and AR(5) gains on turbulent days are close to zero (0.004 and 0.009), while XGBoost keeps 0.064.
+-  **Performance during the COVID-period test window.** Test 1 is dominated by turbulent conditions, representing approximately 60% of forecast dates. At the 1-day horizon, Random Forest and XGBoost achieve positive out-of-sample R² across all three volatility regimes. The updated AR and ARMA models also achieve positive R² across these regimes, although their performance is weaker in turbulent conditions (0.020 and 0.051, respectively). These findings suggest that forecasting performance is sensitive to market volatility. The calm-regime results should be interpreted cautiously because they contain only 16 forecast dates.
 - **Gains are small for individual stocks.** For the pooled 13-stock panel the 1-day R² of the machine-learning models is only about 0.02 to 0.06 in all regimes, well below the market-proxy values. The market proxy is smoother and more autocorrelated than single stocks.
 - **Direction.** In test 2 the random forest reaches 65.6% accuracy on calm days against an up-day base rate of 59.0%, and XGBoost 68.4% on turbulent days against 61.9%. Because up days are the majority in this window, accuracy should always be read next to the base rate, and AUC (about 0.63 to 0.70 for the machine-learning models) is the better summary.
 
@@ -74,7 +76,7 @@ Main findings:
 
 ## 6. Limitations specific to this section
 
-- The regime table currently contains the baselines, the template AR(5), logistic regression, random forest and XGBoost. The tuned AR, ARMA and GJR-GARCH models, and the LSTM, are not in it yet. The regime analysis must be re-run (`python -m src.eda.regime_analysis`) after those predictions are saved, and the section updated.
+- The updated regime analysis includes the baseline models, AR, ARMA, stock ARX, logistic regression, Random Forest and XGBoost. However, GJR-GARCH and LSTM predictions are not currently available in the local prediction files, so these models are excluded from the present regime comparison. The regime analysis should be rerun and this report updated when their predictions become available.
 - Test windows are short (245 and 456 days) and the calm regime in test 1 has 16 days.
 - Regimes are defined from the market proxy. Individual stocks can be in a different state from the market on the same day.
 - The market proxy is an equal-weighted internal series, not the official S&P SL20 index.
