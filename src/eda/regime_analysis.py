@@ -28,7 +28,7 @@ from src.viz.style import PALETTE
 CRISIS = ("2020-03-01", "2020-12-31")
 VOL_ORDER = ["calm", "normal", "turbulent"]
 LOW_N_DATES = 30                      # fewer test days than this: treat results as weak evidence
-TRADITIONAL = ("template_ar5", "ar", "arma", "ar_gjr_garch_t")
+TRADITIONAL = ("template_ar5", "ar", "arma", "ar_gjr_garch_t", "stock_arx")
 ML = ("logistic", "random_forest", "xgboost", "lstm")
 
 
