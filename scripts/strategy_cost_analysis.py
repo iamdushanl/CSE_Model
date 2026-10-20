@@ -41,11 +41,23 @@ def main():
             index="date", columns="entity", values="simple_return"
         ).sort_index()
 
-        # A missing stock-date return contributes no return that date.
+        # Align realized returns with the portfolio weights.
+        # Do not silently replace missing returns with zero.
         returns = returns.reindex(
             index=weights.index, columns=weights.columns
-        ).fillna(0.0)
+        )
 
+        # A selected stock must have a valid realized return.
+        missing_selected_returns = (weights > 0) & returns.isna()
+
+        if missing_selected_returns.any().any():
+            count = int(missing_selected_returns.sum().sum())
+            raise ValueError(
+                f"Backtest stopped: {count} selected stock-date "
+                "positions have missing realized returns."
+            )
+
+        # Missing returns for zero-weight stocks do not affect the portfolio.
         gross = (weights * returns).sum(axis=1)
 
         # Trade volume includes buys and sells. First day starts in cash.
