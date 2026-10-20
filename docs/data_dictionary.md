@@ -14,3 +14,23 @@ Source file: `data/raw/SP20_CSE_Dataset_2001_2025_Adjusted.xlsx`, sheet `Full_Da
 
 Processed files (built by `python run.py data`, not committed): `data/processed/returns_clean.parquet`,
 `market_proxy.parquet`, `features.parquet`. Column definitions for the feature table: `docs/features.md`.
+
+### Processed dataset columns
+
+Processed files are built by `python run.py data` and are not committed to Git.
+
+**`returns_clean.parquet`**
+- `CompanyCode`, `Date`: company identifier and trading date.
+- `Close`: closing price.
+- `lr`: calculated log return.
+- `lr_clean`: cleaned log return used in subsequent processing.
+- `flag_gap`: indicates a return affected by a trading-date gap.
+- `flag_split`: indicates a return flagged by the split-detection threshold.
+
+**`market_proxy.parquet`**
+- `MARKET`: equal-weighted market return proxy, calculated when at least eight valid stock returns are available.
+
+**`features.parquet`**
+- Contains the date, entity, segment, input features, market proxy feature, and future target columns.
+- See `docs/features.md` for the feature definitions.
+- Future target columns (`y_ret_1`, `y_dir_1`, `y_ret_5`, `y_dir_5`, and `y_rv_5`) must not be used as model input features.

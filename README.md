@@ -22,7 +22,7 @@ git clone https://github.com/iamdushanl/CSE_Model.git
 cd CSE_Model
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python run.py test      # 16 tests must pass
+python run.py test      # 19 tests must pass
 python run.py data      # ~20 s: clean data, features, audit tables
 python run.py models    # runs every model in src/models/registry.py through the evaluator
 ```
@@ -47,3 +47,13 @@ test2 2024 to 2025 (new regime). Expanding window, refit once per calendar year.
 
 ## Rules
 Read `CONTRIBUTING.md`. In short: branch, small commits, pull request with one review, tests green, no random splits, no tuning on test windows.
+
+## Reproducibility and Stability Audit
+
+Run the stability audit to evaluate Random Forest and XGBoost performance across multiple random seeds.
+
+```bash
+python -c "from scripts.ml_analysis import run_stability_audit; run_stability_audit()"
+```
+
+The audit reports the mean and standard deviation of evaluation metrics across five random seeds. Results are saved to `reports/tables/ml_stability_audit.csv`.
