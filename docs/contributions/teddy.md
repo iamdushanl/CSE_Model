@@ -5,3 +5,4 @@ Add a row every time you finish something. Link the commit or pull request.
 | --- | --- | --- | --- |
 | 2026-10-19 | Implemented Logistic, Random Forest, and XGBoost forecasters with unit tests (T4) | commit 39fec6e | 3.5 |
 | 2026-10-19 | SHAP interpretability, feature importance, and 5-seed stability audit in notebook & script (T6, T7) | feat/teddy-ml-models | 2.5 |
+| 2026-10-21 | Authored comprehensive evaluation design and ML report section (T9), LSTM feasibility assessment (T5), and verified test reproducibility (T8) | docs/teddy-evaluation-ml-report | 3.0 |
